@@ -15,7 +15,7 @@ class Database {
         $this->db_name = getenv('DBNAME');
         $this->host = getenv('HOST');
         $this->port = getenv('PORT');
-        $this->db_con = getenv('DBConnection');
+        $this->db_conn = getenv('DBConnection');
     }
 
     public function connect() {
@@ -29,7 +29,7 @@ class Database {
 
         try {
             //$this->conn = new PDO ($dsn, $this->username, $this->password);
-            $this->conn = new PDO ($this->db_con);
+            $this->conn = new PDO ($this->db_conn);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             echo 'Connection Error: ' . $e->getMessage();
