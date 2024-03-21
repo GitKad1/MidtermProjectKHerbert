@@ -7,7 +7,6 @@ class Database {
     private $username;
     private $password;
     private $conn;
-    private $db_connection;
 
     public function __construct() {
         $this->username = getenv('USERNAME');
